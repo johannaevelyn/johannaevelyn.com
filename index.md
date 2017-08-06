@@ -2,20 +2,42 @@
 layout: newtheme
 ---
 
-<!-- <div class="posts">
+{% comment %}
+ <div class="posts">
   {% for post in site.posts %}
     <article class="post">
 
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+      <figure class="figure">
+        <img src="images/pastries.jpg" alt=""/>
+        <ul>
+          <li><a href="#"><img src="images/pastry1.jpg" alt=""/></a></li>
+          <li><a href="#"><img src="images/pastry2.jpg" alt=""/></a></li>
+          <li><a href="#"><img src="images/pastry3.jpg" alt=""/></a></li>
+        </ul>
+        <a href="#">click to enlarge images</a>
+      </figure>
 
-      <div class="entry">
-        {{ post.excerpt }}
+      <div>
+
+        <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+
+        <div class="entry">
+          {{ post.excerpt }}
+        </div>
+
+        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
       </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
     </article>
   {% endfor %}
-</div> -->
+</div>
+
+{% include pagination.html %}
+
+{% endcomment %}
+
+{% comment %} {% include hero.html %} {% endcomment %}
+
+{% comment %} {% include featured-pages.html %} {% endcomment %}
 
 ## Coming soon!
 

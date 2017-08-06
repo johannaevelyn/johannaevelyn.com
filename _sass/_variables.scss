@@ -6,13 +6,15 @@
 // Colors
 $blue: #4183C4;
 $orange: #f78117;
+// $orangeLight: #f4a259;
+// $orangeDark: #be6636;
 
 // Grays
 $black: #000;
 $darkerGray: #222;
 $darkGray: #333;
 $gray: #666; // #6d6e71
-$lightGray: #eee;
+$lightGray: #aaa;
 $white: #fff;
 
 // Font stacks
@@ -38,6 +40,47 @@ $boldWeight: 700;
   &:after {
     clear: both;
   }
+}
+//See https://codepen.io/jordanlev/pen/dYZqax for instructions and sample usage.
+
+// In short:
+// 1. Include this file
+// 2. Define the 2 variables ($grid-total-columns and $grid-column-gutter)
+// 3. Put `@include grid-row()` in the style for element(s) that serve as grid "rows" (anything that the next step applies to must have a container with this)
+// 4. Put `@include grid-columns(x)` in the style for an element you want to span a certain number of grid columns. You could wrap this in a media query if you want a "responsive grid".
+
+$grid-total-columns: 12; //default value in case it doesn't get overridden
+$grid-column-gutter: 2%; //default value in case it doesn't get overridden
+
+@mixin grid-row() {
+  @extend .clearfix;
+}
+
+@mixin grid-columns($colspan, $offsetcols: 0) {
+	$offset-width: grid-offset-width($offsetcols, $grid-column-gutter, $grid-total-columns);
+	$colspan-width: grid-colspan-width($colspan, $grid-column-gutter, $grid-total-columns);
+
+	& {
+		float: left;
+		margin-left: $grid-column-gutter + $offset-width + 0%;
+		width: $colspan-width + 0%;
+		box-sizing: border-box;
+	}
+	&:first-child {
+		margin-left: $offset-width + 0%;
+	}
+}
+
+@function grid-single-column-width($column-gutter, $total-columns) {
+	@return ((100 - ($column-gutter * ($total-columns - 1))) / $total-columns);
+}
+
+@function grid-colspan-width($colspan, $column-gutter, $total-columns) {
+	@return ((grid-single-column-width($column-gutter, $total-columns) * $colspan) + ($column-gutter * ($colspan - 1)));
+}
+
+@function grid-offset-width($colspan, $column-gutter, $total-columns) {
+	@return ((grid-single-column-width($column-gutter, $total-columns) + $column-gutter) * $colspan);
 }
 
 // Mobile breakpoints

@@ -11,18 +11,83 @@
 /**************/
 /* BASE RULES */
 /**************/
-html {
-    font: $lightWeight 62.5%/1.4 $mainFont;
+
+// Typography grid
+html, .root {
+	font-size: 62.5%; // Establish 10px as rem
+}
+body, .article {
+	font-family: $mainFont;
+	font-weight: $lightWeight;
     color: $gray;
+	font-size: 1.6rem;
+	line-height: 2.6rem;
 }
-body {
-    font-size: 2.4rem;
-}
-h1, h2, h3, h4, h5, h6 {
-    font-family: $titleFont;
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: $titleFont;
 	font-weight: $boldWeight;
-	margin-bottom: 0.75em;
 }
+h1, .h1 {
+	font-size: 6.8rem;
+	line-height: 7.8rem;
+	margin-top: 2.6rem;
+	margin-bottom: 5.2rem;
+}
+h2, .h2 {
+	font-size: 4.2rem;
+	line-height: 5.2rem;
+	margin-top: 2.6rem;
+	margin-bottom: 2.6rem;
+}
+h3, .h3 {
+	font-size: 2.6rem;
+	line-height: 2.6rem;
+	margin-top: 2.6rem;
+	margin-bottom: 0;
+}
+h4, .h4 {
+	font-size: 1.6rem;
+	line-height: 2.6rem;
+	margin-top: 2.6rem;
+	margin-bottom: 0;
+}
+h5, .h5 {
+	font-size: 1.6rem;
+	line-height: 2.6rem;
+	margin-top: 2.6rem;
+	margin-bottom: 0;
+}
+p, ul, ol, pre, table, blockquote {
+	margin-top: 0;
+	margin-bottom: 2.6rem;
+}
+ul ul, ol ol, ul ol, ol ul {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+/* Let's make sure all's aligned */
+hr, .hr {
+	border: 1px solid;
+	margin: -1px 0;
+}
+a, b, i, strong, em, small, code {
+	line-height: 0;
+}
+sub, sup {
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	top: -0.5em;
+}
+sub {
+	bottom: -0.25em;
+}
+
+// Interactive elements
 a:link, a:visited {
     color: $orange;
     text-decoration: none;
@@ -37,15 +102,30 @@ input, select, textarea {
 	font-size: 2.4rem;
 	font-family: $mainFont;
 }
-button {
-	background: $orange;
-	color: #fff;
+button, .button, a.button,
+input[type='submit'],
+input[type='reset'],
+input[type='button'] {
 	cursor: pointer;
 	padding: 1.2rem 1.5rem;
 	border: none;
 	border-radius: 0.5rem;
 	font-size: 2.4rem;
 	font-family: $mainFont;
+	font-weight: $normalWeight;
+	background: $lightGray;
+	color: $darkGray;
+	&:hover {
+		background: lighten($lightGray, 4%);
+		text-decoration: none;
+	}
+	&.primary {
+		background: $orange;
+		color: #fff;
+		&:hover {
+			background: lighten($orange, 4%);
+		}
+	}
 }
 
 /*------------------------- Layout ------------------------*/
@@ -93,8 +173,10 @@ body {
         display: block;
         float: left;
         .site-name {
-            font-size: 5.6rem;
-            margin-bottom: 1rem;
+			font-size: 5.6rem;
+			margin-top: 0;
+			margin-bottom: 1rem;
+			line-height: 5.6rem;
             a {
                 text-decoration: none;
                 background-color: $darkGray;
@@ -146,7 +228,7 @@ body {
                 outline: none;
             }
             &.selected > a, > a:hover {
-                color:$orange;
+                color: $orange;
             }
         }
     }
@@ -154,311 +236,199 @@ body {
 
 /*------------------------- Body ------------------------*/ 
 .body{
-	width:940px;
-	margin:0 auto;
-	padding:0 10px;
-	// overflow:hidden;
-}
-.body div#featured{
-	background:url(/images/house.jpg) no-repeat right top;
-	height:448px;
-	padding:0 0 17px;
-}
-.body div#featured h3{
-	color:$orange;
-	font-size:36px;
-	font-family: $serif;
-	margin:0 0 30px;
-	width:490px;
-	padding:100px 0 0;
-	font-weight:normal;
-}
-.body div#featured p{
-	width:480px;
-	color:#5d5d5d;
-	font-family: $serif;
-	// font-size:16px;
-	line-height:25px;
-	text-shadow: 0 1px 0 #fcfcfc;
-	text-align:justify;
-	margin:0;
-}
-.body div#featured input{
-	background:url(/images/interface.jpg) no-repeat;
-	border:0;
-    height:48px;
-    width:216px;
-	font-family: $serif;
-	color:#fff;
-	font-size:30px;
-	margin:28px 0 0 125px;
-	cursor:pointer;
-	outline:none;
-}
-.body ul.blog{
-	list-style:none;
-	margin:40px 0 0;
-	padding:0 0 50px;
-	background:url(/images/separator.jpg) no-repeat center top;
-	overflow:hidden;
-}
-.body ul.blog li:first-child{
-	margin:60px 0 0;
-}
-.body ul.blog li{
-	float:left;
-	background:url(/images/interface.jpg) no-repeat 0 -68px!important;
-	margin:60px 0 0 48px;
-	height:400px;
-	padding:0;
-}
-.body ul.blog li div{
-	width:281px;
-	height:380px;
-	text-align:center;
-	padding: 8px 0 20px 0;
-	float:none;
-	margin:0;
-	background:none;
-}
-.body ul.blog li div a img{
-	border:0;
-	margin:0 0 0 -3px;
-}
-.body ul.blog li div a img:hover{
-	filter:alpha(opacity=80);
-	opacity:0.8;
-}
-.body ul.blog li div p{
-	width:258px;
-	text-align:justify;
-	color:#828081;
-	font-family: $serif;
-	margin:17px 0 0 10px;
-	line-height:20px;
-	font-size:14px;
-	background:none;
-	padding:0;
-}
-.body ul.blog li div a:first-child{
-	margin:0;
-	padding:0;
-	background:none;
-	width:auto;
-}
-.body ul.blog li div a:hover{
-	color:$orange;
-}
-.body ul.blog li div a{
-	color:#606060;
-	font-family: $serif;
-	font-style:italic;
-	text-decoration:none;
-	padding:98px 0 0;
-	margin:32px auto 0;
-	display:block;
-	width: 150px;
-	background:url(/images/button-more.jpg) no-repeat center top;
-	outline:none;
-	font-size:16px;
-	font-weight:normal;
-	text-shadow: 0 1px 0 #fcfcfc;
-}
-.body h3{
-	font-family: $serif;
-	font-size:16px;
-	font-weight:bold;
-	color:#636363;
-	margin:15px 0 0;
-	line-height:21px;
-}
-.body p{
-	font-family: $serif;
-	// font-size:16px;
-	text-align:justify;
-	color:#636363;
-	margin:0 0 20px;
-	line-height:21px;
-}
-.body p a{
-	outline:none;
-	color:#636363;
-}
-.body ul{
-	list-style:none;
-    margin:0;
-    padding:0;
-	overflow:hidden;
-}
-.body ul li:first-child{
-	background:none;
-	padding:0 0 30px;
-}
-.body ul li{
-	overflow:hidden;
-	background:url(/images/separator.jpg) no-repeat center top;
-	padding:30px 0;
-}
-.body ul li div.featured{
-	background:url(/images/interface.jpg) no-repeat 0 -68px;
-	width:281px;
-	height:292px;
-	text-align: center;
-	margin:0;
-}
-.body ul li div.featured img{
-	margin:10px 0 0 -3px;
-	border:0;
-}
-.body ul li div.featured ul{
-	overflow:hidden;
-	margin:2px 0 0 10px;
+	width: 940px;
+	margin: 0 auto;
+	padding: 0 10px;
 	
+	#hero {
+		padding: 0 0 17px;
+		h3 {
+			@extend .h2;
+			color: $orange;
+			font-family: $mainFont;
+			font-weight: $normalWeight;
+		}
+		p {
+			color: $darkGray;
+			text-align: justify;
+		}
+	}
+	// ===============================
+	.featured-pages {
+		@extend .clearfix;
+		margin: 4rem 0 0;
+		padding: 0 0 5rem;
+		background: url(/images/separator.jpg) no-repeat center top;
+		@include grid-row();
+		.featured {
+			background: #fff;
+			box-shadow: 0 0 1px rgba(0,0,0,0.25);
+			border-radius: 0.4rem;
+			@include grid-columns(4);
+			margin-top: 2%; // Equal to space between
+			// Start of new rows
+			&:nth-child(3n+4) {
+				clear: left;
+				margin-left: 0;
+			}
+			// First row only
+			&:nth-child(-n+3) {
+				margin-top: 6rem;
+			}
+			a {
+				display: block;
+				padding: 1rem;
+				line-height: inherit;
+				img {
+					display: block;
+					max-width: 100%;
+					width: 100%;
+					height: auto;
+					margin-bottom: 2.6rem;
+				}
+				p:not(:last-of-type) {
+					color: $gray;
+					text-decoration: none;
+					text-align: justify;
+				}
+				p:last-of-type {
+					font-style: italic;
+					font-weight: $normalWeight;
+					text-align: center;
+				}
+				&:hover {
+					text-decoration: none;
+					img {
+						opacity: 0.8;
+					}
+					p:last-of-type {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
 }
-.body ul li div.featured ul li:first-child{
-	margin:0;
+.posts {
+	.post {
+		@extend .clearfix;
+		background: url(/images/separator.jpg) no-repeat center top;
+		padding: 3rem 0 0;
+		&:first-child{
+			background: none;
+			padding-top: 0
+		}
+		@include grid-row();
+		.figure {
+			background: #fff;
+			box-shadow: 0 0 1px rgba(0,0,0,0.25);
+			border-radius: 0.4rem;
+			@include grid-columns(4);
+			padding: 1rem;
+			> img:first-child {
+				display: block;
+				max-width: 100%;
+				width: 100%;
+				height: auto;
+				margin-bottom: 2.6rem;
+			}
+			> ul {
+				@include grid-row();
+				li {
+					@include grid-columns(4);
+					a:hover {
+						opacity: 0.8;
+					}
+					img {
+						display: block;
+						max-width: 100%;
+						width: 100%;
+						height: auto;
+					}
+				}
+			}
+			> a:last-child {
+				display: block;
+				font-style: italic;
+				font-weight: $normalWeight;
+				text-align: center;
+			}
+		}
+		.figure + div {
+			@include grid-columns(8);
+			h3:first-child {
+				// @extend .h4;
+				margin-top: 0;
+				margin-bottom: 2.6rem;
+			}
+		}
+	}
 }
-.body ul li div.featured ul li{
-	float:left;
-	margin:0 0 0 18px;
-	background:none;
-	padding:0;
-}
-.body ul li div.featured ul li a{
-	padding:0;
-}
-.body ul li div.featured ul li a img{
-	margin:0;
-}
-.body ul li div.featured ul li a img:hover{
-	filter:alpha(opacity=80);
-	opacity:0.8;
-}
-.body ul li div.featured a{
-	clear:both;
-	display:block;
-	font-size:13px;
-	font-family: $serif;
-	text-decoration:none;
-	color:#8a8889;
-	font-weight:bold;
-	padding:5px 0 0;
-	width:auto;
-	outline:none;
-}
-.body ul li div{
-	float:left;
-	margin:0 0 0 50px;
-	width:609px;
-	background:url(/images/button-more.jpg) no-repeat left bottom;
-}
-.body ul li div h3{
-	margin:0;
-	font-size:20px;
-	font-weight:bold;
-	font-family: $serif;
-	color:#f28220;
-	line-height:22px;
-}
-.body ul li div p{
-	line-height:22px;
-	font-family: $serif;
-	font-size:14px;
-	color:#5D5D5D;
-	padding:0 0 90px;
-	margin:0;
-}
-.body ul.paging{
-	margin:15px 0 10px 210px;
-}
-.body ul.paging li{
-	float:left;
-	padding:0 5px;
-	background:none;
-}
-.body ul.paging li a{
-	text-decoration:none;
-	color:#ff7e0d;
-	font-family: arial;
-	font-size:12px;
-}
-.body ul.paging li a:hover{
-	color:#5D5D5D;
+.paging{
+	@extend .clearfix;
+	display: block;
+	margin: 1.5rem auto 1rem;
+	list-style: none outside none;
+	text-align: center;
+	cursor: default;
+	li {
+		display: inline-block;
+		padding: 0 0.5rem;
+		a {
+			text-decoration: none;
+			font-size: 1.4rem;
+			&:hover {
+				color: $gray;
+			}
+		}
+	}
 }
 
 /*------------------------- Footer ------------------------*/ 
-.footer{
-	width:940px;
-	background:url(/images/bg-footer.jpg) no-repeat center top;
-	padding:65px 10px 207px;
-	margin:0 auto;
-	overflow:hidden;
+.footer {
+	width: 940px;
+	background: url(/images/bg-footer.jpg) no-repeat center top;
+	padding: 6.5rem 1rem 20.7rem;
+	margin: 0 auto;
+	font-size: 1rem;
+	font-family: $sans-serif;
+	font-weight: $boldWeight;
+	@include grid-row();
+	#footer-nav {
+		@extend .clearfix;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		@include grid-columns(4);
+		ul li {
+			float: left;
+			a {
+				border-left: 1px solid $gray;
+				color:$gray;
+				padding: 0 0.6rem;
+				outline: none;
+				&:hover{
+					color: $orange;
+				}
+			}
+			&:first-child a {
+				border-left: none;
+				padding-left: 0;
+			}
+		}
+	}
+	p {
+		@include grid-columns(4);
+		text-align: center;
+	}
+	#footer-social-nav {
+		@extend .clearfix;
+		@include grid-columns(4);
+		a {
+			float:left;
+			outline:none;
+		}
+	}
 }
-.footer ul{
-	list-style:none;
-	margin:0 0 0 60px;
-	padding:0;
-	overflow:hidden;
-	float:left;
-}
-.footer ul li:first-child a{
-	border:none;
-	padding:0 6px 0 0;
-}
-.footer ul li{
-	float:left;
-}
-.footer ul li a:hover{
-	color:$orange;
-}
-.footer ul li a{
-	border-width: 1px;
-	border-color:#5b5b5b;
-	border-style: none none none solid;
-	color:#5b5b5b;
-	font-size:10px;
-	font-family: Trebuchet MS;
-	text-decoration:none;
-	font-weight:bold;
-	padding:0 6px;
-	outline:none;
-}
-.footer p{
-	color:#5b5b5b;
-	font-size:10px;
-	font-family: Trebuchet MS;
-	font-weight:bold;
-	float:left;
-	margin:6px 0 0 135px;
-}
-.footer div.connect{
-	float:left;
-	margin:0 0 0 92px;
-}
-.footer div.connect a{
-	float:left;
-	outline:none;
-}
-.footer div.connect a#facebook{
-	width:27px;
-	height:28px;
-	display:block;
-	text-indent:-9999px;
-	background:url(/images/icons.gif) no-repeat;
-}
-.footer div.connect a#twitter{
-	width:36px;
-	height:28px;
-	display:block;
-	text-indent:-9999px;
-	background:url(/images/icons.gif) no-repeat 0 -48px;
-	margin:0 0 0 68px;
-}
-.footer div.connect a#vimeo{
-	width:32px;
-	height:28px;
-	display:block;
-	text-indent:-9999px;
-	background:url(/images/icons.gif) no-repeat 0 -96px;
-	margin:0 0 0 73px;
-}
+
+@import "svg-icons";

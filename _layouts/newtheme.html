@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }}{% if site.description %} – {{ site.description }}{% endif %}</title>
 
     {% include meta.html %}
 
@@ -23,12 +23,14 @@
             <p class="site-description">{{ site.description }}</p>
         </div>
 
-        <!-- <nav>
+        {% comment %}
+        <nav id="header-nav">
             <ul>
                 <li><a href="{{ site.baseurl }}/">Blog</a></li>
                 <li><a href="{{ site.baseurl }}/about">About</a></li>
             </ul>
-        </nav> -->
+        </nav>
+        {% endcomment %}
     </header>
 
     <main class="body">
@@ -36,8 +38,20 @@
     </main>
 
     <footer id="page-footer" class="footer">
-        {% include svg-icons.html %}
+        {% comment %}
+        <nav id="footer-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="services.html">Gallery</a></li>
+            </ul>
+        </nav>
+        {% endcomment %}
         <p>&copy; 2017 Johanna Evelyn</p>
+        <nav id="footer-social-nav">
+            {% include svg-icons.html %}
+        </nav>
     </footer>
 </body>
 </html>
