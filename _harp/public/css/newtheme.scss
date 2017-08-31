@@ -86,7 +86,7 @@ sub {
 
 // Interactive elements
 a:link, a:visited {
-    color: $orange;
+    color: $blue;
     text-decoration: none;
 }
 a:hover, a:active {
@@ -108,7 +108,7 @@ input[type='button'] {
 	border: none;
 	border-radius: 0.5rem;
 	font-size: 2.4rem;
-	font-family: $mainFont;
+	font-family: $sans-serif;//mainFont;
 	font-weight: $normalWeight;
 	background: $lightGray;
 	color: $darkGray;
@@ -117,12 +117,23 @@ input[type='button'] {
 		text-decoration: none;
 	}
 	&.primary {
-		background: $orange;
+		background: $blue;
 		color: #fff;
 		&:hover {
-			background: lighten($orange, 4%);
+			background: lighten($blue, 4%);
 		}
 	}
+	&[disabled], &.disabled {
+		background: lighten($lightGray, 20%);
+	}
+	&.primary[disabled], &.primary.disabled {
+		background: lighten($blue, 10%);
+	}
+}
+
+/*--------------------- Generic Classes -------------------*/
+.center {
+	text-align: center;
 }
 
 /*------------------------- Layout ------------------------*/
@@ -202,7 +213,8 @@ body {
             }
         }
         .site-description {
-            font-weight: $normalWeight;
+			font-weight: $normalWeight;
+			margin-bottom: 0;
         }
     }
     nav ul {
@@ -225,14 +237,14 @@ body {
                 outline: none;
             }
             &.selected > a, > a:hover {
-                color: $orange;
+                color: $blue;
             }
         }
     }
 }
 
 /*------------------------- Body ------------------------*/ 
-.body{
+.body {
 	width: 940px;
 	margin: 0 auto;
 	padding: 0 10px;
@@ -245,24 +257,46 @@ body {
 	> h6:first-child {
 		margin-top: 0;
 	}
+
+	
+	figure {
+		img {
+			max-width: 100%;
+		}
+	}
 	
 	#hero {
 		padding: 0 0 17px;
+		.homepage & {
+			height: 422px;
+		}
+		margin-top: -3.5rem;
+		overflow: hidden;
+		figure {
+			float: right;
+			width: 33%;
+		}
+		.call-to-action {
+			float: left;
+			text-align: center;
+			width: 66%;
+			@include vertical-align();
+		}
 		h3 {
 			@extend .h2;
-			color: $orange;
+			color: $blue;
 			font-family: $mainFont;
 			font-weight: $normalWeight;
+			margin-top: 0;
 		}
 		p {
 			color: $darkGray;
-			text-align: justify;
 		}
 	}
 	// ===============================
 	.featured-pages {
 		@extend .clearfix;
-		margin: 4rem 0 0;
+		margin: 0;
 		padding: 0 0 5rem;
 		background: url(/images/separator.jpg) no-repeat center top;
 		@include grid-row();
@@ -312,6 +346,28 @@ body {
 					}
 				}
 			}
+		}
+	}
+	.figure-left {
+		@extend .clearfix;
+		figure {
+			float: left;
+			margin: 0 1rem 1rem 0;
+			max-width: 25%;
+		}
+	}
+	.figure-right {
+		@extend .clearfix;
+		figure {
+			float: right;
+			margin: 0 0 1rem 1rem;
+			max-width: 25%;
+		}
+	}
+	.figure-left, .figure-right {
+		+ .figure-left, + .figure-right {
+			border-top: 1px solid $lightGray;
+			padding-top: 1rem;
 		}
 	}
 }
@@ -414,7 +470,7 @@ body {
 				padding: 0 0.6rem;
 				outline: none;
 				&:hover{
-					color: $orange;
+					color: $blue;
 				}
 			}
 			&:first-child a {

@@ -1,7 +1,17 @@
 {
     "index": {
+        "bodyclass": "homepage"
     },
     "about": {
-        "title": "This is the about title"
+        "title": "About Me",
+        "excerpt": null
+    },
+    "second-chances": {
+        "title": "Second Chances Collection",
+        "excerpt": null
+    },
+    "paranormal-shakespeare": {
+        "title": "Paranormal Shakespeare Collection",
+        "excerpt": null
     }
 }

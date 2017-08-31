@@ -2,9 +2,10 @@
     "globals": {
         "title": null,
         "excerpt": null,
+        "bodyclass": null,
         "site": {
             "name": "Johanna Evelyn",
-            "description": null,
+            "description": "Clean Contemporary Romance",
             "footerLinks": {
                 "dribbble": null,
                 "email": "reviewersclub@johannaevelyn.com",

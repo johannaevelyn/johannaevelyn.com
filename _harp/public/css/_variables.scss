@@ -4,10 +4,7 @@
 //
 
 // Colors
-$blue: #4183C4;
-$orange: #f78117;
-// $orangeLight: #f4a259;
-// $orangeDark: #be6636;
+$blue: #596587;
 
 // Grays
 $black: #000;
@@ -42,6 +39,13 @@ $boldWeight: 700;
   }
 }
 //See https://codepen.io/jordanlev/pen/dYZqax for instructions and sample usage.
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
 
 // In short:
 // 1. Include this file

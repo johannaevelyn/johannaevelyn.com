@@ -11,7 +11,7 @@
     <link rel="alternate" type="application/rss+xml" title="<%= site.name %><% if (site.description) { %> – <%= site.description %><% } %>" href="/feed.xml" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 </head>
-<body>
+<body<% if (bodyclass) { %> class="<%= bodyclass %>"<% } %>>
 
     <header id="page-header" class="header">
         <a href="/" id="headshot">
@@ -23,14 +23,12 @@
             <% if (site.description) { %><p class="site-description"><%= site.description %></p><% } %>
         </div>
 
-        <!--
         <nav id="header-nav">
             <ul>
-                <li><a href="/">Blog</a></li>
+                <!-- <li><a href="/">Blog</a></li> -->
                 <li><a href="/about">About</a></li>
             </ul>
         </nav>
-        -->
     </header>
 
     <main class="body"><%- yield %></main>
