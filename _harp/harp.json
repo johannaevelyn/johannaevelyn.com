@@ -5,21 +5,13 @@
         "bodyclass": null,
         "site": {
             "name": "Johanna Evelyn",
-            "description": "Clean Contemporary Romance",
+            "description": "Author of Clean Romance",
             "footerLinks": {
-                "dribbble": null,
                 "email": "reviewersclub@johannaevelyn.com",
-                "facebook": null,
-                "flickr": null,
-                "github": null,
-                "instagram": null,
-                "linkedin": null,
+                "facebook": "https://www.facebook.com/groups/345451855898063/",
                 "pinterest": null,
                 "rss": null,
-                "twitter": null,
-                "stackoverflow": null,
-                "youtube": null,
-                "googleplus": null
+                "youtube": null
             }
         }
     }

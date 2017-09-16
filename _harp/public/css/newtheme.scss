@@ -4,6 +4,7 @@
 
 @import "reset";
 @import "variables";
+@import "icons";
 
 /**************/
 /* BASE RULES */
@@ -135,6 +136,13 @@ input[type='button'] {
 .center {
 	text-align: center;
 }
+.visuallyhidden { 
+	position: absolute; 
+	overflow: hidden; 
+	clip: rect(0 0 0 0); 
+	height: 1px; width: 1px; 
+	margin: -1px; padding: 0; border: 0; 
+}
 
 /*------------------------- Layout ------------------------*/
 html, body {
@@ -146,13 +154,13 @@ html {
     background:url(/images/bg-body.jpg);
 }
 body {
-    background:url(/images/bg-header.jpg) no-repeat center top;
+    background:url(/images/header-highlight.png) no-repeat 50% 0;
 }
 
 /*------------------------- Header ------------------------*/ 
 .header {
     @extend .clearfix;
-	background: url(/images/bg-navigation.jpg) no-repeat 50% 100%;
+	// background: url(/images/bg-navigation.jpg) no-repeat 50% 100%;
 	width: 940px;
 	margin: 0 auto;
 	padding: 3.6rem 1rem 7.5rem;
@@ -181,10 +189,10 @@ body {
         display: block;
         float: left;
         .site-name {
-			font-size: 5.6rem;
-			margin-top: 0;
-			margin-bottom: 1rem;
-			line-height: 5.6rem;
+			font-size: 4.3rem;
+			margin-top: 0.3rem;
+			margin-bottom: 2.5rem;
+			line-height: 4.3rem;
             a {
                 text-decoration: none;
                 background-color: $darkGray;
@@ -224,7 +232,7 @@ body {
         float: right;
         > li {
             float: left;
-            margin: 0 0 0 63px;
+            margin: 0 0 0 2rem;
             &:first-of-type {
                 margin-left: 0;
             }
@@ -282,6 +290,13 @@ body {
 			width: 66%;
 			@include vertical-align();
 		}
+		#readers-club-button {
+			button {
+				font-family: $sans-serif !important;//mainFont;
+				font-weight: $normalWeight !important;
+				padding: 1.2rem 1.5rem !important;
+			}
+		}
 		h3 {
 			@extend .h2;
 			color: $blue;
@@ -301,8 +316,6 @@ body {
 		background: url(/images/separator.jpg) no-repeat center top;
 		@include grid-row();
 		.featured {
-			background: #fff;
-			box-shadow: 0 0 1px rgba(0,0,0,0.25);
 			border-radius: 0.4rem;
 			@include grid-columns(4);
 			margin-top: 2%; // Equal to space between
@@ -317,14 +330,14 @@ body {
 			}
 			a {
 				display: block;
-				padding: 1rem;
 				line-height: inherit;
 				img {
 					display: block;
 					max-width: 100%;
 					width: 100%;
 					height: auto;
-					margin-bottom: 2.6rem;
+					box-shadow: 0 0 15px rgba(0,0,0,0.75);
+					text-align: center;
 				}
 				p:not(:last-of-type) {
 					color: $gray;
@@ -449,48 +462,48 @@ body {
 /*------------------------- Footer ------------------------*/ 
 .footer {
 	width: 940px;
-	background: url(/images/bg-footer.jpg) no-repeat center top;
+	background: url(/images/footer-bg.png) no-repeat center top;
 	padding: 6.5rem 1rem 20.7rem;
 	margin: 0 auto;
 	font-size: 1rem;
 	font-family: $sans-serif;
 	font-weight: $boldWeight;
 	@include grid-row();
-	#footer-nav {
-		@extend .clearfix;
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		@include grid-columns(4);
-		ul li {
-			float: left;
-			a {
-				border-left: 1px solid $gray;
-				color:$gray;
-				padding: 0 0.6rem;
-				outline: none;
-				&:hover{
-					color: $blue;
-				}
-			}
-			&:first-child a {
-				border-left: none;
-				padding-left: 0;
-			}
-		}
-	}
 	p {
-		@include grid-columns(4);
-		text-align: center;
+		@include grid-columns(8);
+		text-align: left;
+		font-size: 1.5rem;
+		font-weight: $lightWeight;
 	}
 	#footer-social-nav {
 		@extend .clearfix;
 		@include grid-columns(4);
+		text-align: right;
 		a {
-			float:left;
-			outline:none;
+			font-size: 1.5rem;
+			font-weight: $lightWeight;
+			i {
+				margin-right: 1rem;
+				transition: all ease 250ms;
+				position: relative;
+				top: 0;
+			}
+			&:hover {
+				text-decoration: none;
+				i {
+					top: -0.5rem;
+				}
+			}
 		}
 	}
 }
 
-@import "svg-icons";
+/*------------------------- Page-specific ------------------------*/
+.not-found {
+	.body {
+		text-align: center;
+		img {
+			max-width: 600px;
+		}
+	}
+}

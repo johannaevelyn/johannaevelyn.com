@@ -1,0 +1,84 @@
+@import "variables";
+
+@font-face {
+  font-family: 'johannaevelynicons';
+  src:  url('#{$icomoon-font-path}/johannaevelynicons.eot?v3qkr5');
+  src:  url('#{$icomoon-font-path}/johannaevelynicons.eot?v3qkr5#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/johannaevelynicons.ttf?v3qkr5') format('truetype'),
+    url('#{$icomoon-font-path}/johannaevelynicons.woff?v3qkr5') format('woff'),
+    url('#{$icomoon-font-path}/johannaevelynicons.svg?v3qkr5#johannaevelynicons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'johannaevelynicons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-chevron-thin-left {
+  &:before {
+    content: $icon-chevron-thin-left;
+  }
+}
+.icon-chevron-thin-right {
+  &:before {
+    content: $icon-chevron-thin-right;
+  }
+}
+.icon-cross {
+  &:before {
+    content: $icon-cross;
+  }
+}
+.icon-email {
+  &:before {
+    content: $icon-email;
+  }
+}
+.icon-menu {
+  &:before {
+    content: $icon-menu;
+  }
+}
+.icon-message {
+  &:before {
+    content: $icon-message;
+  }
+}
+.icon-rss {
+  &:before {
+    content: $icon-rss;
+  }
+}
+.icon-typing {
+  &:before {
+    content: $icon-typing;
+  }
+}
+.icon-facebook {
+  &:before {
+    content: $icon-facebook;
+  }
+}
+.icon-pinterest {
+  &:before {
+    content: $icon-pinterest;
+  }
+}
+.icon-youtube {
+  &:before {
+    content: $icon-youtube;
+  }
+}
+

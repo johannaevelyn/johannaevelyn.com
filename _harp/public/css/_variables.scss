@@ -93,3 +93,18 @@ $grid-column-gutter: 2%; //default value in case it doesn't get overridden
     @content;
   }
 }
+
+// Icon Font
+$icomoon-font-path: "fonts" !default;
+
+$icon-chevron-thin-left: "\e900";
+$icon-chevron-thin-right: "\e901";
+$icon-cross: "\e902";
+$icon-email: "\e903";
+$icon-menu: "\e904";
+$icon-message: "\e905";
+$icon-rss: "\e90a";
+$icon-typing: "\e906";
+$icon-facebook: "\e907";
+$icon-pinterest: "\e908";
+$icon-youtube: "\e909";

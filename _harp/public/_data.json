@@ -1,4 +1,7 @@
 {
+    "404": {
+        "bodyclass": "not-found"
+    },
     "index": {
         "bodyclass": "homepage"
     },
