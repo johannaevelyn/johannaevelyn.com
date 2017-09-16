@@ -163,7 +163,7 @@ body {
 	// background: url(/images/bg-navigation.jpg) no-repeat 50% 100%;
 	width: 940px;
 	margin: 0 auto;
-	padding: 3.6rem 1rem 7.5rem;
+	padding: 3.6rem 1rem 3.5rem;
     
     #headshot {
         display: block;
@@ -276,13 +276,18 @@ body {
 	#hero {
 		padding: 0 0 17px;
 		.homepage & {
-			height: 422px;
+			height: 250px;
 		}
 		margin-top: -3.5rem;
 		overflow: hidden;
 		figure {
 			float: right;
 			width: 33%;
+			.homepage & {
+				img {
+					max-height: 250px;
+				}
+			}
 		}
 		.call-to-action {
 			float: left;
