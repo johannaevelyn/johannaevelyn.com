@@ -12,33 +12,10 @@
 	<atom:link href="/feed/" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description>Author of Clean Romance</description>
-	<lastBuildDate>Sat, 02 Jun 2018 23:27:31 +0000</lastBuildDate>
+	<lastBuildDate>Wed, 19 Sep 2018 23:34:55 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=4.9.6</generator>
-	<item>
-		<title>Hello world!</title>
-		<link>/2017/12/29/hello-world/</link>
-		<comments>/2017/12/29/hello-world/#respond</comments>
-		<pubDate>Sat, 30 Dec 2017 04:31:34 +0000</pubDate>
-		<dc:creator><![CDATA[Johanna Evelyn]]></dc:creator>
-				<category><![CDATA[Uncategorized]]></category>
-
-		<guid isPermaLink="false">/?p=1</guid>
-		<description><![CDATA[Welcome to WordPress. This is your first post. Edit or delete it, then start writing!]]></description>
-		<wfw:commentRss>/2017/12/29/hello-world/feed/</wfw:commentRss>
-		<slash:comments>0</slash:comments>
-		</item>
-		<item>
-		<title>Dolores corrupti quod et veritatis</title>
-		<link>/2017/12/20/dolores-corrupti-quod-et-veritatis/</link>
-		<pubDate>Wed, 20 Dec 2017 08:10:19 +0000</pubDate>
-		<dc:creator><![CDATA[Johanna Evelyn]]></dc:creator>
-				<category><![CDATA[Uncategorized]]></category>
-
-		<guid isPermaLink="false">/2017/12/20/dolores-corrupti-quod-et-veritatis/</guid>
-		<description><![CDATA[Rerum non ex praesentium explicabo molestias ut quibusdam Labore impedit beatae Voluptas omnis maiores reprehenderit ullam odit neque mollitia. pariatur nisi ab voluptate in. Rem similique tempora voluptatem non voluptas. Placeat eaque possimus officiis sunt Maxime inventore dolores esse omnis nihil eum. Impedit facere nihil et animi. Reprehenderit et suscipit sunt consequatur. laboriosam ut dignissimos<footer class="entry-footer index-entry"><div class="post-social pull-left"><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocal.johannaevelyn.com%2F2017%2F12%2F20%2Fdolores-corrupti-quod-et-veritatis%2F" target="_blank" class="social-icons"><i class="fa fa-facebook" aria-hidden="true"></i></a><a href="https://twitter.com/home?status=http%3A%2F%2Flocal.johannaevelyn.com%2F2017%2F12%2F20%2Fdolores-corrupti-quod-et-veritatis%2F" target="_blank" class="social-icons"><i class="fa fa-twitter" aria-hidden="true"></i></a><a href="https://pinterest.com/pin/create/button/?url=http%3A%2F%2Flocal.johannaevelyn.com%2F2017%2F12%2F20%2Fdolores-corrupti-quod-et-veritatis%2F&#038;media=http%3A%2F%2Flocal.johannaevelyn.com%2Fwp-content%2Fuploads%2F2017%2F12%2Fab4c8d76-be9c-331a-8c13-e2396fa25939.jpg" target="_blank" class="social-icons"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a><a href="https://www.linkedin.com/shareArticle?mini=true&#038;url=http%3A%2F%2Flocal.johannaevelyn.com%2F2017%2F12%2F20%2Fdolores-corrupti-quod-et-veritatis%2F&#038;title=Dolores+corrupti+quod+et+veritatis" target="_blank" class="social-icons"><i class="fa fa-linkedin" aria-hidden="true"></i></a></div><p class="link-more"><a href="/2017/12/20/dolores-corrupti-quod-et-veritatis/" class="more-link">Continue reading <span class="meta-nav">→</span></a></p></footer>]]></description>
-		</item>
-	</channel>
+	<generator>https://wordpress.org/?v=4.9.8</generator>
+</channel>
 </rss>
