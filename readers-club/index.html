@@ -76,7 +76,8 @@ img.emoji {
     </script>
     <!-- End MailerLite Universal -->
 		<style type="text/css" id="wp-custom-css">
-			.custom-header {
+			/* --- Site Header */
+.custom-header {
 	width: 100%;
 	height: 0 !important;
 	padding-top: 28.75%;
@@ -91,11 +92,8 @@ header#masthead {
 	/*background-color: #ae3c4e*/
 	background-color: #9d0945
 }
-@media screen and (max-width: 768px) {
-.main-navigation .blaskan-main-menu > ul, .main-navigation .blaskan-main-menu > div {
-	background-color: #9d0945
-	}
-}
+
+/* --- Links */
 .site-title a, .site-title a:visited, a, a:visited {
 	/*color: #ae3c4e;*/
 	color: #9d0945;
@@ -105,14 +103,31 @@ header#masthead {
 }
 
 .entry-content .button-link, .entry-content .button-link:hover, .entry-content .button-link:visited {
-  padding: 0.75em 1.5em;
-  display: inline-block;
-  background: #999;
-  color: #fff;
+	padding: 0.75em 1.5em;
+	display: inline-block;
+	background: #999;
+	color: #fff;
 }
-/* --- subscribe form/button */
+
+/* --- subscribe form */
 #page #content .subscribe-form {
 	padding: 0;
+}
+
+/* --- Homepage only content */
+.home .entry-content img.alignleft,
+.home .entry-content img.alignright {
+    max-width: 150px;
+}
+.home .entry-content hr {
+    clear: both;
+}
+
+/* --- Mobile Devices */
+@media screen and (max-width: 768px) {
+	.main-navigation .blaskan-main-menu > ul, .main-navigation .blaskan-main-menu > div {
+		background-color: #9d0945
+	}
 }		</style>
 	<style id="tt-easy-google-font-styles" type="text/css">p { }
 h1 { font-family: 'Source Sans Pro'; font-style: normal; font-weight: 400; }
@@ -175,7 +190,7 @@ body,button,input,select,textarea,ol,ul { }
 				<h1 class="entry-title">Readers Club</h1>    </header><!-- .entry-header -->
   
     <div class="entry-content">
-		<script type="text/javascript" src="https://app.mailerlite.com/data/webforms/696986/x1a8c1.js?v=1555736478"></script>
+		<script type="text/javascript" src="https://app.mailerlite.com/data/webforms/696986/x1a8c1.js?v=1558495909"></script>
     </div><!-- .entry-content -->
 
 	</article><!-- #post-## -->
